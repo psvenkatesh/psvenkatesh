@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eurowing Digital Price Challenge</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <header class="container nav-container">
+        <div class="nav-logo">
+            <a href="#">
+                <img class="logo" src="assets/images/eurowing_logo.png" alt="Eurowing Domestic airline" />
+            </a>
+        </div>
+    </header>
+
+    <div class="banner">
+        <div>
+            <img class="banner-img" src="assets/images/eurowing_banner.jpg" alt=>
+        </div>
+        <div class="banner-title hidden-xs">
+            <h1 class="header-title">Price Offers</h1>
+        </div>
+        <div class="visible-xs">
+            <h1 class="header-title title-mobile">Price Offers</h1>
+        </div>
+    </div>
+    <div class="container search-widget">
+        <form id="searchFilter">
+            <div class="trip-selection">
+                <fieldset>
+                    <legend class="legend">
+                        <label class="trip-select">
+                            <input type="radio" name="trip-type-selector" class="trip-radio return-trip" aria-label="Return" checked>
+                            <span class="radio-label" id="return">Return</span>
+                        </label>
+                        <label class="trip-select">
+                            <input type="radio" name="trip-type-selector" class="trip-radio one-way" aria-label="one-way">
+                            <span class="radio-label" id="one-ways">One way</span>
+                        </label>
+                    </legend>
+                </fieldset>
+                <span>
+                    <input type="checkbox" role="checkbox" tabindex="0" hidden aria-checked="false" class="price-checkbox-input" aria-label="Flexible Dates">
+                    <label class="price-checkbox-label" role="checkbox" tabindex="0">Flexible Dates
+                        <sup>*</sup>
+                    </label>
+                </span>
+            </div>
+            <div class="search-selection">
+                <div class="location-selection">
+                    <label class="search-selection-label">From</label>
+                    <div>
+                        <input class="location-plcholder" type="text" id="fromCountry" aria-label="Origin" placeholder="Origin" required>
+                    </div>
+                </div>
+                <div class="location-selection">
+                    <label class="search-selection-label">To</label>
+                    <div>
+                        <input class="location-plcholder" type="text" id="toCountry" aria-label="Departure" placeholder="Departure" required>
+                    </div>
+                </div>
+                <div class="search-selection-date">
+                    <div class="date-selection">
+                        <label class="search-selection-label">Departure Date</label>
+                        <div>
+                            <input type="date" required min="2021-10-08" Class="location-plcholder" id="departureDate" aria-label="Departure Date">
+                            <span class="validity"></span>
+                        </div>
+                    </div>
+                    <div class="date-selection return-date">
+                        <label class="search-selection-label">Return Date</label>
+                        <div>
+                            <input type="date" required min="2021-10-08" Class="location-plcholder" id="returnDate" aria-label="Return Date">
+                            <span class="validity"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="search-button">
+                <input type="submit" value="    Search    " class="btn btn-primary search-btn">
+                </button>
+                <div class="oneway-unavailable hidden" aria-label="One way offers are not available at this moment">One way offers are not available at this moment</div>
+                <div class="api-error hidden" aria-label="OOP's seems to be issue with the server data. Please Try Again">OOP's seems to be issue with the server data. Please Try Again</div>
+                <div class="empty-data hidden" aria-label="Prices not available for this Routes/Dates">Prices not available for this Routes/Dates</div>
+            </div>
+
+    </div>
+    </form>
+    </div>
+    <div class="container search-result hidden-result" aria-hidden="true" role="status" aria-live="polite">
+        <div class="search-result-location ">
+            <div class="country-search-location">
+                <span class="origin" ></span>
+                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                <span class="destination"></span>
+            </div>
+        </div>
+        <div class="search-result-table hidden-result">
+            <table class="search-table">
+                <thead>
+                    <tr class="search-table-heading">
+                        <th class="departure-date-heading" aria-label="Departure">
+                            Departure
+                            <i class="fa fa-sort"></i>
+                        </th>
+                        <th aria-label="Return">
+                            Return
+                            <i class="fa fa-sort"></i>
+                        </th>
+                        <th aria-label="Seats Available">
+                            Seats Available
+                            <i class="fa fa-sort"></i>
+
+                        </th>
+                        <th aria-label="Offers">
+                            Offers
+                            <i class="fa fa-sort"></i>
+                        </th>
+                        <th aria-label="Price">
+                            Price
+                            <i class="fa fa-sort"></i>
+
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="search-table-result">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <footer class="container">
+        <div class="footer-disclaimer" aria-label="Flexible dates will show prices of the flights from the requested places. Departure date will be fixed,
+        return date may vary">
+            <sup>*</sup> Flexible dates will show prices of the flights from the requested places. Departure date will be fixed,
+            return date may vary.
+        </div>
+    </footer>
+</body>
+<script src="JS/priceOffer.js"></script>
+
+</html>
