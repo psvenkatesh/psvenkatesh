@@ -1,5 +1,5 @@
 - 👋 Hi, I’m @psvenkatesh
-- 👀 I’m interested in web technologies and photography
+- 👀 I’m interested in web technologies
 - 🌱 I’m currently learning whatever I can. 
 - 💞️ I’m looking to collaborate on anything which can be interesting and innovative
 - 📫 How to reach me ... mail me on psvenkatesh996@gmail.com
